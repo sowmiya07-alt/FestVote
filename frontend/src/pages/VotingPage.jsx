@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-hot-toast';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Search } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 
 const VotingPage = () => {
@@ -11,6 +11,7 @@ const VotingPage = () => {
     const [category, setCategory] = useState(null);
     const [nominees, setNominees] = useState([]);
     const [selectedNominee, setSelectedNominee] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
     const [submitting, setSubmitting] = useState(false);
@@ -65,6 +66,11 @@ const VotingPage = () => {
 
     if (loading) return <div className="loader"></div>;
 
+    const filteredNominees = nominees.filter(nominee => 
+        nominee.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        nominee.department.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     return (
         <PageTransition>
             <div className="main-content">
@@ -76,8 +82,20 @@ const VotingPage = () => {
                     <p style={{ fontWeight: 600, color: 'var(--secondary-color)' }}>Choose one nominee.</p>
                 </div>
 
+                <div className="search-container" style={{ position: 'relative', maxWidth: '400px', margin: '0 auto 2rem auto' }}>
+                    <Search style={{ position: 'absolute', left: '15px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-light)' }} size={20} />
+                    <input 
+                        type="text" 
+                        placeholder="Search nominees by name or department..." 
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="form-control"
+                        style={{ paddingLeft: '45px', borderRadius: '25px' }}
+                    />
+                </div>
+
                 <div className="grid-cards">
-                    {nominees.map(nominee => {
+                    {filteredNominees.map(nominee => {
                         const isSelected = selectedNominee?.id === nominee.id;
                         return (
                             <div
@@ -104,6 +122,12 @@ const VotingPage = () => {
                         );
                     })}
                 </div>
+                
+                {filteredNominees.length === 0 && (
+                    <div className="card text-center text-light" style={{ marginTop: '2rem' }}>
+                        No nominees found matching your search.
+                    </div>
+                )}
 
                 <div className="card text-center mt-4" style={{ position: 'sticky', bottom: '2rem', zIndex: 10, boxShadow: 'var(--shadow-glow)' }}>
                     {selectedNominee ? (
