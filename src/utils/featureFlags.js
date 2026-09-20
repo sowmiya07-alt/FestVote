@@ -10,3 +10,4 @@ export const flags = {};
 // Feature tweak: add_new_award_category_icon - 1789909980879
 // Feature tweak: tweak_dashboard_card_shadows - 1789909986061
 // Feature tweak: update_vote_confirmation_text - 1789909989712
+// Feature tweak: refine_modal_animation - 1789910058712
