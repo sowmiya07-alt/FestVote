@@ -53,3 +53,4 @@ export const flags = {};
 // Feature tweak: final_ui_polish_before_launch - 1789910469534
 // UI/UX Improvement: add_responsive_breakpoints_for_tablet - 1789910718279
 // UI/UX Improvement: improve_contrast_ratio_on_text - 1789910722016
+// UI/UX Improvement: update_favicon_to_festvote_logo - 1789910725639
