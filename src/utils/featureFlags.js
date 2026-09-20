@@ -29,3 +29,4 @@ export const flags = {};
 // Feature tweak: add_prop_validation - 1789910360229
 // Feature tweak: clean_up_unused_css_classes - 1789910364262
 // Feature tweak: optimize_react_imports - 1789910368269
+// Feature tweak: add_meta_tags_for_seo - 1789910372286
