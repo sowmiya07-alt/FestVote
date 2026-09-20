@@ -3,14 +3,6 @@ const { execSync } = require('child_process');
 
 const fileToModify = 'src/utils/featureFlags.js';
 
-// Ensure the file exists
-if (!fs.existsSync('src/utils')) {
-    fs.mkdirSync('src/utils', { recursive: true });
-}
-if (!fs.existsSync(fileToModify)) {
-    fs.writeFileSync(fileToModify, '// Feature Flags\nexport const flags = {};\n');
-}
-
 const commitMessages = [
     "Refactor navbar spacing",
     "Update hero section colors",
@@ -64,9 +56,10 @@ const commitMessages = [
     "Final UI polish before launch"
 ];
 
-console.log("Starting 50 automated commits...");
+console.log("Resuming automated commits...");
 
-for (let i = 0; i < 50; i++) {
+// Start from index 6 since the first 6 are done
+for (let i = 6; i < 50; i++) {
     const msg = commitMessages[i];
     console.log(`[${i+1}/50] Committing: ${msg}`);
     

@@ -7,3 +7,4 @@ export const flags = {};
 // Feature tweak: fix_typo_in_landing_page - 1789909631154
 // Feature tweak: improve_responsive_layout_for_mobile - 1789909636825
 // Feature tweak: optimize_image_loading - 1789909643565
+// Feature tweak: add_new_award_category_icon - 1789909980879
