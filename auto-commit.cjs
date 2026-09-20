@@ -56,23 +56,45 @@ const commitMessages = [
     "Final UI polish before launch"
 ];
 
-console.log("Resuming automated commits...");
+// Push the local commit that failed to push last time
+try {
+    console.log("Pushing previous local commit...");
+    execSync('git push');
+} catch (e) {
+    console.log("Push failed, retrying in 5 seconds...");
+    execSync('sleep 5 || timeout 5');
+    execSync('git push');
+}
 
-// Start from index 6 since the first 6 are done
-for (let i = 6; i < 50; i++) {
+console.log("Resuming automated commits from index 11...");
+
+for (let i = 11; i < 50; i++) {
     const msg = commitMessages[i];
     console.log(`[${i+1}/50] Committing: ${msg}`);
     
     // Make a small change
     fs.appendFileSync(fileToModify, `\n// Feature tweak: ${msg.replace(/ /g, '_').toLowerCase()} - ${Date.now()}`);
     
+    let success = false;
+    let attempts = 0;
+    
     // Git commands
-    try {
-        execSync('git add .');
-        execSync(`git commit -m "${msg}"`);
-        execSync('git push');
-    } catch (error) {
-        console.error(`Error on commit ${i+1}:`, error.message);
+    execSync('git add .');
+    execSync(`git commit -m "${msg}"`);
+    
+    while (!success && attempts < 3) {
+        try {
+            attempts++;
+            execSync('git push');
+            success = true;
+        } catch (error) {
+            console.error(`Push failed on commit ${i+1}, attempt ${attempts}. Retrying in 5s...`);
+            try { execSync('sleep 5 || timeout 5'); } catch(e){}
+        }
+    }
+    
+    if (!success) {
+        console.error(`Failed to push commit ${i+1} after 3 attempts. Aborting.`);
         break;
     }
 }
