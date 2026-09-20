@@ -42,3 +42,4 @@ export const flags = {};
 // Feature tweak: refactor_voting_logic_hook - 1789910425790
 // Feature tweak: improve_toast_notification_ui - 1789910429892
 // Feature tweak: update_login_page_background - 1789910433562
+// Feature tweak: add_subtle_pulse_animation - 1789910437150
