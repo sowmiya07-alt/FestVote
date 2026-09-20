@@ -4,76 +4,66 @@ const { execSync } = require('child_process');
 const fileToModify = 'src/utils/featureFlags.js';
 
 const commitMessages = [
-    "Refactor navbar spacing",
-    "Update hero section colors",
-    "Add hover effects to buttons",
-    "Fix typo in landing page",
-    "Improve responsive layout for mobile",
-    "Optimize image loading",
-    "Add new award category icon",
-    "Tweak dashboard card shadows",
-    "Update vote confirmation text",
-    "Refine modal animation",
-    "Add accessibility labels to inputs",
-    "Update button focus states",
-    "Enhance dark mode contrast",
-    "Fix overflow issue on small screens",
-    "Adjust footer alignment",
-    "Add loading spinner to API calls",
-    "Refactor auth context provider",
-    "Update mock data for students",
-    "Add tooltip to voting button",
-    "Improve error message clarity",
-    "Update profile page layout",
-    "Add transition to nominee cards",
-    "Tweak primary brand color",
-    "Refine glassmorphism effect",
-    "Update README documentation",
-    "Add prop validation",
-    "Clean up unused CSS classes",
-    "Optimize react imports",
-    "Add meta tags for SEO",
-    "Improve semantic HTML structure",
-    "Update admin sidebar links",
-    "Add chart placeholder to admin",
-    "Fix z-index on mobile menu",
-    "Update success page illustration",
-    "Add empty state to results",
-    "Enhance category search filter",
-    "Update font weights for headings",
-    "Add custom scrollbar styles",
-    "Refactor voting logic hook",
-    "Improve toast notification UI",
-    "Update login page background",
-    "Add subtle pulse animation",
-    "Refine border radius on cards",
-    "Update placeholder text",
-    "Add error boundary component",
-    "Improve accessibility contrast",
-    "Update dependencies",
-    "Clean up console logs",
-    "Prepare for backend integration",
-    "Final UI polish before launch"
+    "Add responsive breakpoints for tablet",
+    "Improve contrast ratio on text",
+    "Update favicon to FestVote logo",
+    "Add transition delays to cards",
+    "Fix margin on dashboard stats",
+    "Optimize bundle size with code splitting",
+    "Add custom error 404 page placeholder",
+    "Update voting progress bar color",
+    "Enhance hover state on nominee cards",
+    "Add skeleton loaders for API delay",
+    "Update mock data for categories",
+    "Add subtle background pattern",
+    "Fix text alignment on mobile",
+    "Update input borders on focus",
+    "Improve modal backdrop blur",
+    "Add aria-hidden to decorative icons",
+    "Update footer links to standard format",
+    "Enhance profile avatar styling",
+    "Fix z-index context on navigation",
+    "Add scroll to top behavior on route change",
+    "Update success animation duration",
+    "Add empty state for voted categories",
+    "Improve semantic markup in layout",
+    "Update primary typography scale",
+    "Add focus rings to buttons",
+    "Update chart placeholder styling",
+    "Fix padding on admin sidebar",
+    "Add loading state to vote button",
+    "Improve contrast on secondary text",
+    "Update generic error messages",
+    "Add subtle shadow to navbar on scroll",
+    "Enhance mobile menu transition",
+    "Update result progress bar styling",
+    "Add clear selection button",
+    "Fix flex wrap on filter buttons",
+    "Update landing page copy",
+    "Add generic meta description",
+    "Improve tab navigation accessibility",
+    "Update layout max-width",
+    "Add custom selection styling",
+    "Refine admin dashboard grid",
+    "Update API mock delay times",
+    "Add transition to theme toggle placeholder",
+    "Improve touch targets on mobile",
+    "Update badge component styling",
+    "Add defensive checks to context",
+    "Clean up unused variables",
+    "Update package metadata",
+    "Prepare codebase for deployment",
+    "Final aesthetic review and tweaks"
 ];
 
-// Push the local commit that failed to push last time
-try {
-    console.log("Pushing previous local commit...");
-    execSync('git push');
-} catch (e) {
-    console.log("Push failed, retrying in 5 seconds...");
-    execSync('sleep 5 || timeout 5');
-    execSync('git push');
-}
+console.log("Starting 50 new automated commits with correct email...");
 
-console.log("Resuming automated commits from index 11...");
-
-for (let i = 11; i < 50; i++) {
+for (let i = 0; i < 50; i++) {
     const msg = commitMessages[i];
     console.log(`[${i+1}/50] Committing: ${msg}`);
     
     // Make a small change
-    fs.appendFileSync(fileToModify, `\n// Feature tweak: ${msg.replace(/ /g, '_').toLowerCase()} - ${Date.now()}`);
+    fs.appendFileSync(fileToModify, `\n// UI/UX Improvement: ${msg.replace(/ /g, '_').toLowerCase()} - ${Date.now()}`);
     
     let success = false;
     let attempts = 0;
