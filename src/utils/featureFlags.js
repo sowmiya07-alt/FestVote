@@ -22,3 +22,4 @@ export const flags = {};
 // Feature tweak: add_tooltip_to_voting_button - 1789910281764
 // Feature tweak: improve_error_message_clarity - 1789910293792
 // Feature tweak: update_profile_page_layout - 1789910308850
+// Feature tweak: add_transition_to_nominee_cards - 1789910327413
