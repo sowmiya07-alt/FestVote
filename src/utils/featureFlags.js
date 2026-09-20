@@ -16,3 +16,4 @@ export const flags = {};
 // Feature tweak: enhance_dark_mode_contrast - 1789910224384
 // Feature tweak: fix_overflow_issue_on_small_screens - 1789910237925
 // Feature tweak: adjust_footer_alignment - 1789910243771
+// Feature tweak: add_loading_spinner_to_api_calls - 1789910248226
