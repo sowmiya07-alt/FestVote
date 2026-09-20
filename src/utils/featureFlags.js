@@ -59,3 +59,4 @@ export const flags = {};
 // UI/UX Improvement: optimize_bundle_size_with_code_splitting - 1789910752448
 // UI/UX Improvement: add_custom_error_404_page_placeholder - 1789910761152
 // UI/UX Improvement: update_voting_progress_bar_color - 1789910765931
+// UI/UX Improvement: enhance_hover_state_on_nominee_cards - 1789910775554
