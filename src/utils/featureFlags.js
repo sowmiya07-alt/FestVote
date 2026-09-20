@@ -75,3 +75,4 @@ export const flags = {};
 // UI/UX Improvement: add_empty_state_for_voted_categories - 1789910836409
 // UI/UX Improvement: improve_semantic_markup_in_layout - 1789910840651
 // UI/UX Improvement: update_primary_typography_scale - 1789910846636
+// UI/UX Improvement: add_focus_rings_to_buttons - 1789910850934
