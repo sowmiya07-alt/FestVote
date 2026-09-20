@@ -36,3 +36,4 @@ export const flags = {};
 // Feature tweak: fix_z-index_on_mobile_menu - 1789910390996
 // Feature tweak: update_success_page_illustration - 1789910398996
 // Feature tweak: add_empty_state_to_results - 1789910402960
+// Feature tweak: enhance_category_search_filter - 1789910406926
