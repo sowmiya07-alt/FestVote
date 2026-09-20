@@ -23,3 +23,4 @@ export const flags = {};
 // Feature tweak: improve_error_message_clarity - 1789910293792
 // Feature tweak: update_profile_page_layout - 1789910308850
 // Feature tweak: add_transition_to_nominee_cards - 1789910327413
+// Feature tweak: tweak_primary_brand_color - 1789910338872
